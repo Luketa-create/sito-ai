@@ -1,128 +1,97 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 40px;
-      text-align: center;
-    }
-    h1 {
-      color: #444;
-    }
-  </style>
-</head>
-<body>
-  <h1>Benvenuto nel tuo sito AI!</h1>
-  <p>Funziona! Ora sei online con GitHub Pages 🎉</p>
-</body>
-</html><!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LukeTA2 - Tattoo Artist</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LukeTA2 – Tatuaggi Geometrici & Watercolor</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
       color: #fff;
-      background-color: #111;
     }
     header {
-      background: url('hero.jpg') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       text-align: center;
-      position: relative;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
+      padding: 100px 20px 60px;
+      background-color: #111;
     }
     header h1 {
-      position: relative;
-      font-size: 3rem;
+      font-size: 2.5em;
+      margin: 0;
       color: #d4af37;
-      z-index: 1;
+    }
+    header p {
+      color: #ccc;
+      font-size: 1em;
+      margin-top: 10px;
     }
     section {
       padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+      max-width: 800px;
+      margin: 0 auto;
     }
     h2 {
       color: #d4af37;
       text-align: center;
       margin-bottom: 20px;
     }
-    .portfolio {
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border: 2px solid #d4af37;
+      border-radius: 8px;
+    }
+    .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
       justify-content: center;
     }
-    .portfolio img {
-      width: calc(33% - 10px);
-      max-width: 300px;
-      border: 2px solid #d4af37;
-      border-radius: 5px;
-    }
     footer {
-      background-color: #000;
       text-align: center;
-      padding: 20px;
-      color: #888;
+      padding: 40px 20px;
+      background-color: #111;
+      font-size: 0.9em;
+      color: #666;
     }
     a {
       color: #d4af37;
       text-decoration: none;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <h1>LukeTA2 – Tatuaggi Geometrici & Watercolor</h1>
+    <p>Stile, precisione e colore. A Modena dal 2013.</p>
+  </header>
 
-<header>
-  <h1>LukeTA2 - Tatuaggi Geometrici & Watercolor</h1>
-</header>
+  <section>
+    <h2>Chi sono</h2>
+    <p>Ciao, sono Luca Cirillo, in arte <strong>LukeTA2</strong>. Realizzo tatuaggi ispirati alla geometria sacra, mandala e tecniche watercolor. Ogni disegno è unico, pensato per armonizzarsi con il corpo e la personalità di chi lo indossa.</p>
+  </section>
 
-<section id="about">
-  <h2>Chi Sono</h2>
-  <p style="text-align:center; max-width: 700px; margin: auto;">
-    Mi chiamo Luca Cirillo, in arte <strong>LukeTA2</strong>. Creo tatuaggi unici ispirati alla geometria sacra,
-    ai mandala e all'arte watercolor. Ogni disegno nasce da un equilibrio tra tecnica e creatività,
-    per raccontare una storia sulla pelle.
-  </p>
-</section>
+  <section>
+    <h2>Galleria</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x300?text=Mandala" alt="Mandala" />
+      <img src="https://via.placeholder.com/300x300?text=Geometrico" alt="Geometrico" />
+      <img src="https://via.placeholder.com/300x300?text=Watercolor" alt="Watercolor" />
+    </div>
+  </section>
 
-<section id="portfolio">
-  <h2>Portfolio</h2>
-  <div class="portfolio">
-    <img src="tattoo1.jpg" alt="Tatuaggio 1">
-    <img src="tattoo2.jpg" alt="Tatuaggio 2">
-    <img src="tattoo3.jpg" alt="Tatuaggio 3">
-  </div>
-</section>
+  <section>
+    <h2>Contatti</h2>
+    <p style="text-align: center;">
+      📍 Modena, Italia<br>
+      ✉️ <a href="mailto:luketa2.tattoo@gmail.com">luketa2.tattoo@gmail.com</a><br>
+      📸 <a href="https://instagram.com/luketa2" target="_blank">@luketa2</a>
+    </p>
+  </section>
 
-<section id="contacts">
-  <h2>Contattami</h2>
-  <p style="text-align:center">
-    📍 Modena, Italia<br>
-    📧 <a href="mailto:luketa2@example.com">luketa2@example.com</a><br>
-    📱 <a href="https://instagram.com/luketa2" target="_blank">@luketa2 su Instagram</a>
-  </p>
-</section>
-
-<footer>
-  &copy; 2025 LukeTA2 • Tutti i diritti riservati
-</footer>
-
+  <footer>
+    &copy; 2025 LukeTA2 • Tutti i diritti riservati
+  </footer>
 </body>
 </html>
