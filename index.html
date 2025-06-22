@@ -1,105 +1,131 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LukeTA2 - Tatuaggi Geometrici e Watercolor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LukeTA2 - Tatuaggi Geometrici & Watercolor</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
       background-color: #000;
       color: #fff;
       line-height: 1.6;
     }
+
     header {
       background-color: #111;
-      padding: 60px 20px;
+      padding: 40px 20px 20px;
       text-align: center;
     }
+
     header h1 {
       color: #d4af37;
-      font-size: 2.5rem;
+      font-size: 2.5em;
+      margin: 0;
     }
+
     header p {
       color: #ccc;
-      font-size: 1rem;
+      font-size: 1em;
     }
+
     section {
-      padding: 60px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
-    section h2 {
+
+    h2 {
       color: #d4af37;
+      font-size: 1.8em;
       margin-bottom: 20px;
     }
-    .about p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-    }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      margin-top: 40px;
     }
-    .gallery img {
-      width: 300px;
-      height: auto;
-      border: 3px solid #d4af37;
+
+    .gallery-item {
+      border: 2px solid #d4af37;
       border-radius: 10px;
+      overflow: hidden;
+      width: 280px;
+      background-color: #111;
     }
-    .contact p {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
+
+    .gallery-item p {
+      margin: 10px 0;
+      font-weight: bold;
+      color: #d4af37;
+    }
+
     footer {
       background-color: #111;
-      color: #888;
       text-align: center;
       padding: 20px;
+      font-size: 0.9em;
+      color: #999;
     }
+
     a {
       color: #d4af37;
       text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>LukeTA2 – Tatuaggi Geometrici & Watercolor</h1>
     <p>Stile, precisione e colore. A Modena dal 2013.</p>
   </header>
 
-  <section class="about">
+  <section>
     <h2>Chi sono</h2>
     <p>Ciao, sono Luca Cirillo, in arte <strong>LukeTA2</strong>. Realizzo tatuaggi ispirati alla geometria sacra, mandala e tecniche watercolor. Ogni disegno è unico, pensato per armonizzarsi con il corpo e la personalità di chi lo indossa.</p>
   </section>
 
-  <section class="gallery">
+  <section>
     <h2>Galleria</h2>
     <div class="gallery">
-      <img src="https://via.placeholder.com/300x400.png?text=Mandala+1" alt="Tatuaggio Mandala 1">
-      <img src="https://via.placeholder.com/300x400.png?text=Geometrico+1" alt="Tatuaggio Geometrico 1">
-      <img src="https://via.placeholder.com/300x400.png?text=Watercolor+1" alt="Tatuaggio Watercolor 1">
-      <img src="https://via.placeholder.com/300x400.png?text=Mandala+2" alt="Tatuaggio Mandala 2">
-      <img src="https://via.placeholder.com/300x400.png?text=Geometrico+2" alt="Tatuaggio Geometrico 2">
-      <img src="https://via.placeholder.com/300x400.png?text=Watercolor+2" alt="Tatuaggio Watercolor 2">
+      <div class="gallery-item">
+        <img src="images/mandala.jpg" alt="Mandala">
+        <p>Mandala</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/biancoenero.jpg" alt="Bianco e Nero">
+        <p>Bianco e Nero</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/watercolor.jpg" alt="Watercolor">
+        <p>Watercolor</p>
+      </div>
     </div>
   </section>
 
-  <section class="contact">
+  <section>
     <h2>Contattami</h2>
     <p>📍 Modena, Italia</p>
     <p>📧 <a href="mailto:luketa2@email.com">luketa2@email.com</a></p>
-    <p>📸 <a href="https://instagram.com/luketa2" target="_blank">Instagram: @luketa2</a></p>
+    <p>📸 <a href="https://www.instagram.com/luketa2" target="_blank">@luketa2</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 LukeTA2 • Tutti i diritti riservati</p>
+    &copy; 2025 LukeTA2 • Tutti i diritti riservati
   </footer>
+
 </body>
 </html>
