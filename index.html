@@ -3,46 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUKE TA2 - Tattoo Artist</title>
+  <title>LukeTA2 – Tattoo Artist</title>
+
+  <!-- Font personalizzato -->
   <style>
     @font-face {
-      font-family: 'Lemon Milk';
+      font-family: 'LEMON MILK';
       src: url('img/LEMONMILK-Regular.otf') format('opentype');
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Lemon Milk', sans-serif;
+      margin: 0;
+      font-family: 'LEMON MILK', sans-serif;
+      background-color: #000;
       color: white;
-      background-color: black;
-      overflow-x: hidden;
     }
 
     header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      padding: 10px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 30px;
+      position: absolute;
+      top: 0;
+      width: 100%;
       z-index: 10;
     }
 
     .logo {
-      height: 60px;
+      height: 50px;
     }
 
     nav a {
-      margin-left: 30px;
-      color: #e0a656;
+      color: #d8973c;
       text-decoration: none;
+      margin-left: 20px;
       font-size: 18px;
       transition: color 0.3s;
     }
@@ -54,85 +50,139 @@
     .hero {
       display: flex;
       height: 100vh;
-      width: 100%;
+      overflow: hidden;
     }
 
-    .hero img {
-      width: 33.333%;
-      object-fit: cover;
-      height: 100vh;
+    .hero > div {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      position: relative;
     }
 
-    .hero-text {
-      position: absolute;
-      top: 55%;
-      right: 5%;
-      transform: translateY(-50%);
-      text-align: right;
-      max-width: 40%;
-    }
-
-    .hero-text h1 {
-      font-size: 48px;
-      line-height: 1.3;
-    }
-
-    .hero-text h1 span {
-      color: #e0a656;
-    }
-
-    .hero-text p {
-      font-size: 16px;
-      margin-top: 15px;
-    }
-
-    .social-icons {
-      position: absolute;
-      top: 120px;
-      left: 30px;
+    .left, .center, .right {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      justify-content: center;
+      align-items: center;
     }
 
-    .social-icons a img {
-      width: 36px;
-      height: 36px;
-      transition: filter 0.3s;
+    .left {
+      background-image: url('img/biancoenero.jpg');
+      align-items: flex-start;
+      padding: 20px;
+      position: relative;
     }
 
-    .social-icons a img:hover {
-      filter: brightness(10);
+    .social {
+      position: absolute;
+      top: 100px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .social a img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s;
+    }
+
+    .social a img:hover {
+      transform: scale(1.2);
+    }
+
+    .center {
+      background-image: url('img/watercolor.jpg');
+    }
+
+    .right {
+      background-image: url('img/mandala.jpg');
+      align-items: flex-end;
+      padding: 40px;
+      text-align: right;
+    }
+
+    .right h1 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .right h1 span {
+      color: #d8973c;
+    }
+
+    .right p {
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 10px;
+        font-size: 16px;
+      }
+
+      .right h1 {
+        font-size: 28px;
+      }
+
+      .social {
+        flex-direction: row;
+        top: auto;
+        bottom: 20px;
+        left: 20px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="img/luketa2-logo.png" alt="Logo" class="logo">
+    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo">
     <nav>
       <a href="#">HOME</a>
       <a href="#tattoo">TATTOO</a>
-      <a href="#chi">CHI SONO</a>
+      <a href="#chisono">CHI SONO</a>
       <a href="#contatti">CONTATTI</a>
       <a href="#blog">BLOG</a>
     </nav>
   </header>
 
   <div class="hero">
-    <img src="img/biancoenero.jpg" alt="Tattoo 1">
-    <img src="img/watercolor.jpg" alt="Tattoo 2">
-    <img src="img/mandala.jpg" alt="Tattoo 3">
+    <div class="left">
+      <div class="social">
+        <a href="https://www.facebook.com/luketa2" target="_blank">
+          <img src="img/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/luketa2" target="_blank">
+          <img src="img/instagram.png" alt="Instagram">
+        </a>
+        <a href="tel:3482463458">
+          <img src="img/whatsapp.png" alt="WhatsApp">
+        </a>
+      </div>
+    </div>
 
-    <div class="hero-text">
+    <div class="center"></div>
+
+    <div class="right">
       <h1>PER TE IL MIGLIOR <span>DESIGN</span><br>DEL TATUAGGIO</h1>
       <p>LE TUE IDEE MERITANO ISPIRAZIONE, TECNICA E CUORE.</p>
     </div>
-
-    <div class="social-icons">
-      <a href="https://www.facebook.com/luketa2/"><img src="img/facebook.png" alt="Facebook"></a>
-      <a href="https://www.instagram.com/luketa2"><img src="img/instagram.png" alt="Instagram"></a>
-      <a href="tel:3482463458"><img src="img/whatsapp.png" alt="WhatsApp"></a>
-    </div>
   </div>
+
 </body>
 </html>
