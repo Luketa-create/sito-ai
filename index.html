@@ -2,124 +2,161 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LukeTA2 – Tatuaggi Geometrici & Watercolor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #0a0a0a;
-      color: #fff;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #000;
+      color: white;
     }
-    header {
-      background-image: url('img/hero.jpg');
+
+    header.hero {
+      background-image: url("img/hero.jpg");
       background-size: cover;
       background-position: center;
-      padding: 120px 20px;
+      padding: 150px 20px;
       text-align: right;
-      color: #fff;
+      color: white;
+      position: relative;
     }
-    header h1 {
+
+    header.hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: 30px;
+    }
+
+    .hero-content h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      font-weight: bold;
+      font-size: 3em;
+      font-weight: 700;
       margin: 0;
     }
-    header h1 span {
-      color: #d99852;
+
+    .hero-content h1 span {
+      color: #cc8844;
     }
-    header p {
-      font-size: 18px;
-      margin-top: 15px;
-      max-width: 500px;
-      float: right;
+
+    .hero-content p {
+      margin-top: 20px;
+      font-size: 1.2em;
+      line-height: 1.6;
     }
+
     section {
       padding: 60px 20px;
       text-align: center;
     }
+
     h2 {
-      color: #e3b340;
-      font-size: 28px;
+      color: #f4c04e;
+      font-size: 1.8em;
       margin-bottom: 20px;
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
     }
+
     .card {
-      background-color: #1a1a1a;
-      border: 2px solid #e3b340;
-      border-radius: 10px;
+      background-color: #111;
+      border: 2px solid #f4c04e;
+      border-radius: 8px;
       overflow: hidden;
       width: 280px;
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px #000;
     }
-    .card:hover {
-      transform: scale(1.03);
-    }
+
     .card img {
       width: 100%;
       height: auto;
       display: block;
     }
+
     .card p {
-      padding: 10px;
+      margin: 15px;
       font-weight: bold;
-      color: #e3b340;
+      color: #f4c04e;
     }
+
     footer {
-      background-color: #0a0a0a;
+      background-color: #111;
+      color: white;
       padding: 40px 20px;
       text-align: center;
-      border-top: 1px solid #333;
     }
-    footer h2 {
-      color: #e3b340;
-    }
-    footer p, footer a {
-      color: #ddd;
-      font-size: 14px;
+
+    footer a {
+      color: #f4c04e;
       text-decoration: none;
+      display: block;
       margin: 5px 0;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Your <span>Imagination</span><br>Our Passion</h1>
-    <p>Specializing in classic, bold, and bright tattoos that last a lifetime.<br>Tattoos are a mark of the soul.</p>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Your <span>Imagination</span><br>Our Passion</h1>
+      <p>
+        Specializing in classic, bold, and bright tattoos that last a lifetime.<br>
+        Tattoos are a mark of the soul.
+      </p>
+    </div>
   </header>
 
-  <section>
+  <!-- Chi Sono -->
+  <section id="chisono">
     <h2>Chi sono</h2>
     <p>Ciao, sono Luca Cirillo, in arte <strong>LukeTA2</strong>. Realizzo tatuaggi ispirati alla geometria sacra, mandala, tecniche watercolor e bianco e nero. Ogni disegno è unico, pensato per armonizzarsi con il corpo e la personalità di chi lo indossa.</p>
   </section>
 
-  <section>
+  <!-- Galleria -->
+  <section id="galleria">
     <h2>Galleria</h2>
     <div class="gallery">
       <div class="card">
-        <img src="img/mandala.jpg" alt="Mandala">
+        <img src="img/mandala.jpg" alt="Mandala" />
         <p>Mandala</p>
       </div>
       <div class="card">
-        <img src="img/biancoenero.jpg" alt="Bianco e Nero">
+        <img src="img/biancoenero.jpg" alt="Bianco e Nero" />
         <p>Bianco e Nero</p>
       </div>
       <div class="card">
-        <img src="img/watercolor.jpg" alt="Watercolor">
+        <img src="img/watercolor.jpg" alt="Watercolor" />
         <p>Watercolor</p>
       </div>
     </div>
   </section>
 
+  <!-- Contatti -->
   <footer>
     <h2>Contattami</h2>
-    <p>
+    <p>📍 Modena, Italia</p>
+    <a href="mailto:luketa2@email.com">luketa2@email.com</a>
+    <a href="https://www.instagram.com/luketa2" target="_blank">@luketa2</a>
+  </footer>
+
+</body>
+</html>
