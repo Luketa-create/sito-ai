@@ -1,77 +1,71 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LukeTA2 – Tattoo Artist</title>
 
-  <!-- Font personalizzato -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUKETA2 Tattoo Artist</title>
   <style>
     @font-face {
-      font-family: 'LEMON MILK';
-      src: url('img/LEMONMILK-Regular.otf') format('opentype');
+      font-family: "LEMON MILK";
+      src: url("img/LEMONMILK-Regular.otf") format("opentype");
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      font-family: 'LEMON MILK', sans-serif;
-      background-color: #000;
-      color: white;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 30px;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-    }
-
-    .logo {
-      height: 50px;
-    }
-
-    nav a {
-      color: #d8973c;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
+      font-family: "LEMON MILK", sans-serif;
       color: white;
     }
 
     .hero {
       display: flex;
       height: 100vh;
-      overflow: hidden;
     }
 
-    .hero > div {
-      flex: 1;
-      background-size: cover;
-      background-position: center;
-      position: relative;
+    .hero img {
+      width: 33.33%;
+      object-fit: cover;
     }
 
-    .left, .center, .right {
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .header {
+      position: absolute;
+      top: 0;
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      padding: 20px 40px;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
-    .left {
-      background-image: url('img/biancoenero.jpg');
-      align-items: flex-start;
-      padding: 20px;
-      position: relative;
+    .logo {
+      height: 60px;
+    }
+
+    nav a {
+      color: #d29a42;
+      margin-left: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: white;
     }
 
     .social {
@@ -80,109 +74,71 @@
       left: 20px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
     }
 
     .social a img {
-      width: 32px;
-      height: 32px;
-      filter: brightness(0) invert(1);
-      transition: transform 0.3s;
+      width: 30px;
+      height: 30px;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
     }
 
     .social a img:hover {
-      transform: scale(1.2);
+      filter: brightness(100%) invert(1);
     }
 
-    .center {
-      background-image: url('img/watercolor.jpg');
-    }
-
-    .right {
-      background-image: url('img/mandala.jpg');
-      align-items: flex-end;
-      padding: 40px;
+    .hero-text {
+      position: absolute;
+      bottom: 120px;
+      right: 60px;
       text-align: right;
     }
 
-    .right h1 {
-      font-size: 38px;
-      line-height: 1.2;
-      margin-bottom: 10px;
+    .hero-text h1 {
+      font-size: 42px;
     }
 
-    .right h1 span {
-      color: #d8973c;
+    .hero-text h1 span {
+      color: #d29a42;
     }
 
-    .right p {
+    .hero-text p {
       font-size: 14px;
-      margin-top: 0;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-      }
-
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav a {
-        margin: 10px;
-        font-size: 16px;
-      }
-
-      .right h1 {
-        font-size: 28px;
-      }
-
-      .social {
-        flex-direction: row;
-        top: auto;
-        bottom: 20px;
-        left: 20px;
-      }
+      margin-top: 10px;
     }
   </style>
 </head>
+
 <body>
-
-  <header>
-    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo">
-    <nav>
-      <a href="#">HOME</a>
-      <a href="#tattoo">TATTOO</a>
-      <a href="#chisono">CHI SONO</a>
-      <a href="#contatti">CONTATTI</a>
-      <a href="#blog">BLOG</a>
-    </nav>
-  </header>
-
   <div class="hero">
-    <div class="left">
-      <div class="social">
-        <a href="https://www.facebook.com/luketa2" target="_blank">
-          <img src="img/facebook.png" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/luketa2" target="_blank">
-          <img src="img/instagram.png" alt="Instagram">
-        </a>
-        <a href="tel:3482463458">
-          <img src="img/whatsapp.png" alt="WhatsApp">
-        </a>
-      </div>
+    <img src="img/nero.jpg" alt="nero" />
+    <img src="img/colorato.jpg" alt="colorato" />
+    <img src="img/mandala.jpg" alt="mandala" />
+    <div class="overlay"></div>
+
+    <div class="header">
+      <img src="img/luketa2-logo.png" alt="logo" class="logo" />
+      <nav>
+        <a href="#">HOME</a>
+        <a href="#tattoo">TATTOO</a>
+        <a href="#chisono">CHI SONO</a>
+        <a href="#contatti">CONTATTI</a>
+        <a href="#blog">BLOG</a>
+      </nav>
     </div>
 
-    <div class="center"></div>
+    <div class="social">
+      <a href="https://www.facebook.com/luketa2/"><img src="img/facebook.png" alt="Facebook" /></a>
+      <a href="https://www.instagram.com/luketa2"><img src="img/instagram.png" alt="Instagram" /></a>
+      <a href="tel:+393482463458"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+    </div>
 
-    <div class="right">
-      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br>DEL TATUAGGIO</h1>
+    <div class="hero-text">
+      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br />DEL TATUAGGIO</h1>
       <p>LE TUE IDEE MERITANO ISPIRAZIONE, TECNICA E CUORE.</p>
     </div>
   </div>
-
 </body>
+
 </html>
