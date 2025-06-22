@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LukeTA2 - Tatuaggi Geometrici & Watercolor</title>
+  <title>LukeTA2 – Tatuaggi Geometrici & Watercolor</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #000;
-      color: white;
+      color: #fff;
       text-align: center;
     }
 
     header {
       background-color: #111;
-      padding: 40px 20px 20px;
+      padding: 50px 20px 30px;
     }
 
     header h1 {
       color: #d4af37;
-      font-size: 2em;
+      font-size: 32px;
       margin: 0;
     }
 
@@ -33,8 +33,9 @@
       padding: 40px 20px;
     }
 
-    section h2 {
+    h2 {
       color: #d4af37;
+      font-size: 24px;
       margin-bottom: 20px;
     }
 
@@ -45,25 +46,37 @@
       gap: 20px;
     }
 
-    .gallery img {
-      width: 300px;
-      height: auto;
+    .gallery-item {
+      background-color: #111;
       border: 2px solid #d4af37;
       border-radius: 10px;
+      padding: 10px;
+      width: 250px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .gallery-item h3 {
+      margin-top: 10px;
+      color: #d4af37;
+    }
+
+    .contact {
+      font-size: 16px;
+    }
+
+    .contact p {
+      margin: 5px 0;
     }
 
     footer {
       background-color: #111;
-      color: #999;
-      font-size: 0.9em;
+      color: #ccc;
       padding: 20px;
-    }
-
-    @media (max-width: 600px) {
-      .gallery {
-        flex-direction: column;
-        align-items: center;
-      }
+      font-size: 14px;
     }
   </style>
 </head>
@@ -74,26 +87,35 @@
     <p>Stile, precisione e colore. A Modena dal 2013.</p>
   </header>
 
-  <section id="chi-sono">
+  <section>
     <h2>Chi sono</h2>
-    <p>Ciao, sono Luca Cirillo, in arte <strong>LukeTA2</strong>. Realizzo tatuaggi ispirati alla geometria sacra, mandala, tecniche watercolor e bianco e nero. Ogni disegno è unico, pensato per armonizzarsi con il corpo e la personalità di chi lo indossa.</p>
+    <p>Ciao, sono Luca Cirillo, in arte <strong>LukeTA2</strong>. Realizzo tatuaggi ispirati alla geometria sacra, mandala e tecniche watercolor. Ogni disegno è unico, pensato per armonizzarsi con il corpo e la personalità di chi lo indossa.</p>
   </section>
 
-  <section id="galleria">
+  <section>
     <h2>Galleria</h2>
     <div class="gallery">
-      <div>
+      <div class="gallery-item">
         <img src="img/mandala.jpg" alt="Mandala">
-        <p>Mandala</p>
+        <h3>Mandala</h3>
       </div>
-      <div>
+      <div class="gallery-item">
         <img src="img/biancoenero.jpg" alt="Bianco e Nero">
-        <p>Bianco e Nero</p>
+        <h3>Bianco e Nero</h3>
       </div>
-      <div>
+      <div class="gallery-item">
         <img src="img/watercolor.jpg" alt="Watercolor">
-        <p>Watercolor</p>
+        <h3>Watercolor</h3>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contattami</h2>
+    <div class="contact">
+      <p>📍 Modena, Italia</p>
+      <p>📧 <a href="mailto:luketa2@email.com" style="color: #d4af37;">luketa2@email.com</a></p>
+      <p>📷 <a href="https://www.instagram.com/luketa2" target="_blank" style="color: #d4af37;">@luketa2</a></p>
     </div>
   </section>
 
