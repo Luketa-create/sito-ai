@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUKETA2 Tattoo Artist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LukeTA2 - Tattoo Artist</title>
   <style>
     @font-face {
-      font-family: "LEMON MILK";
-      src: url("img/LEMONMILK-Regular.otf") format("opentype");
+      font-family: 'LemonMilk';
+      src: url('img/LEMONMILK-Regular.otf') format('opentype');
     }
 
     * {
@@ -18,127 +17,175 @@
     }
 
     body {
-      font-family: "LEMON MILK", sans-serif;
+      font-family: 'LemonMilk', sans-serif;
+      background-color: #000;
       color: white;
     }
 
-    .hero {
-      display: flex;
-      height: 100vh;
-    }
-
-    .hero img {
-      width: 33.33%;
-      object-fit: cover;
-    }
-
-    .overlay {
+    header {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.35);
-    }
-
-    .header {
-      position: absolute;
-      top: 0;
-      width: 100%;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 2;
     }
 
     .logo {
-      height: 60px;
+      height: 80px;
     }
 
     nav a {
-      color: #d29a42;
-      margin-left: 30px;
+      color: #d29952;
       text-decoration: none;
+      margin-left: 30px;
       font-size: 18px;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
 
     nav a:hover {
       color: white;
     }
 
-    .social {
-      position: absolute;
-      top: 100px;
-      left: 20px;
+    .hero {
+      height: 100vh;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      background: url('img/hero.jpg') center/cover no-repeat;
+      position: relative;
     }
 
-    .social a img {
-      width: 30px;
-      height: 30px;
-      filter: grayscale(100%);
-      transition: filter 0.3s ease;
-    }
-
-    .social a img:hover {
-      filter: brightness(100%) invert(1);
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
     }
 
     .hero-text {
-      position: absolute;
-      bottom: 120px;
-      right: 60px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
       text-align: right;
+      color: white;
     }
 
     .hero-text h1 {
-      font-size: 42px;
+      font-size: 64px;
+      font-weight: bold;
     }
 
-    .hero-text h1 span {
-      color: #d29a42;
+    .hero-text span {
+      color: #d29952;
     }
 
     .hero-text p {
-      font-size: 14px;
       margin-top: 10px;
+      font-size: 20px;
+      max-width: 600px;
+    }
+
+    .social {
+      position: absolute;
+      top: 140px;
+      left: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      z-index: 999;
+    }
+
+    .social img {
+      width: 48px;
+      height: auto;
+      transition: filter 0.3s ease;
+      filter: brightness(0.8);
+    }
+
+    .social img:hover {
+      filter: brightness(1.2) invert(1);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .hero-text {
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+      }
+
+      .hero-text p {
+        font-size: 16px;
+      }
+
+      .social {
+        top: 100px;
+        left: 20px;
+        gap: 20px;
+      }
+
+      .social img {
+        width: 36px;
+      }
+
+      .logo {
+        height: 60px;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="hero">
-    <img src="img/nero.jpg" alt="nero" />
-    <img src="img/colorato.jpg" alt="colorato" />
-    <img src="img/mandala.jpg" alt="mandala" />
-    <div class="overlay"></div>
+  <header>
+    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo">
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#tattoo">TATTOO</a>
+      <a href="#chisono">CHI SONO</a>
+      <a href="#contatti">CONTATTI</a>
+      <a href="#blog">BLOG</a>
+    </nav>
+  </header>
 
-    <div class="header">
-      <img src="img/luketa2-logo.png" alt="logo" class="logo" />
-      <nav>
-        <a href="#">HOME</a>
-        <a href="#tattoo">TATTOO</a>
-        <a href="#chisono">CHI SONO</a>
-        <a href="#contatti">CONTATTI</a>
-        <a href="#blog">BLOG</a>
-      </nav>
-    </div>
+  <div class="social">
+    <a href="https://www.facebook.com/luketa2/" target="_blank">
+      <img src="img/facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://www.instagram.com/luketa2" target="_blank">
+      <img src="img/instagram.png" alt="Instagram" />
+    </a>
+    <a href="https://wa.me/393482463458" target="_blank">
+      <img src="img/whatsapp.png" alt="WhatsApp" />
+    </a>
+  </div>
 
-    <div class="social">
-      <a href="https://www.facebook.com/luketa2/"><img src="img/facebook.png" alt="Facebook" /></a>
-      <a href="https://www.instagram.com/luketa2"><img src="img/instagram.png" alt="Instagram" /></a>
-      <a href="tel:+393482463458"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
-    </div>
-
+  <section class="hero" id="home">
     <div class="hero-text">
-      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br />DEL TATUAGGIO</h1>
+      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br>DEL TATUAGGIO</h1>
       <p>LE TUE IDEE MERITANO ISPIRAZIONE, TECNICA E CUORE.</p>
     </div>
-  </div>
+  </section>
 </body>
-
 </html>
