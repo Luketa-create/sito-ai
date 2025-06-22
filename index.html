@@ -1,42 +1,79 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LukeTA2 – Tatuaggi Geometrici & Watercolor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #000;
-      color: #fff;
-      text-align: center;
+      color: white;
     }
 
     header {
       background-color: #111;
-      padding: 50px 20px 30px;
+      padding: 30px 20px 15px;
+      text-align: center;
     }
 
     header h1 {
       color: #d4af37;
-      font-size: 32px;
+      font-size: 28px;
       margin: 0;
     }
 
     header p {
+      font-size: 14px;
       color: #ccc;
-      margin-top: 10px;
+      margin: 5px 0 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000;
+      padding: 15px 30px;
+    }
+
+    nav .logo {
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #d4af37;
     }
 
     section {
-      padding: 40px 20px;
+      padding: 50px 20px;
+      text-align: center;
     }
 
     h2 {
       color: #d4af37;
-      font-size: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .gallery {
@@ -46,82 +83,108 @@
       gap: 20px;
     }
 
-    .gallery-item {
-      background-color: #111;
+    .gallery img {
       border: 2px solid #d4af37;
       border-radius: 10px;
-      padding: 10px;
       width: 250px;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.3s;
     }
 
-    .gallery-item img {
-      width: 100%;
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
       border-radius: 5px;
+      border: none;
     }
 
-    .gallery-item h3 {
-      margin-top: 10px;
-      color: #d4af37;
-    }
-
-    .contact {
-      font-size: 16px;
-    }
-
-    .contact p {
-      margin: 5px 0;
+    button {
+      background-color: #d4af37;
+      color: #000;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     footer {
       background-color: #111;
       color: #ccc;
+      text-align: center;
       padding: 20px;
       font-size: 14px;
     }
+
+    footer a {
+      color: #d4af37;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
+
 <body>
+  <nav>
+    <div class="logo">LukeTA2</div>
+    <ul>
+      <li><a href="#chisono">Chi sono</a></li>
+      <li><a href="#galleria">Galleria</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </nav>
 
   <header>
     <h1>LukeTA2 – Tatuaggi Geometrici & Watercolor</h1>
     <p>Stile, precisione e colore. A Modena dal 2013.</p>
   </header>
 
-  <section>
+  <section id="chisono">
     <h2>Chi sono</h2>
-    <p>Ciao, sono Luca Cirillo, in arte <strong>LukeTA2</strong>. Realizzo tatuaggi ispirati alla geometria sacra, mandala e tecniche watercolor. Ogni disegno è unico, pensato per armonizzarsi con il corpo e la personalità di chi lo indossa.</p>
+    <p>Ciao, sono Luca Cirillo, in arte <strong>LukeTA2</strong>. Realizzo tatuaggi ispirati alla geometria sacra, mandala, tecniche watercolor e bianco e nero. Ogni disegno è unico, pensato per armonizzarsi con il corpo e la personalità di chi lo indossa.</p>
   </section>
 
-  <section>
+  <section id="galleria">
     <h2>Galleria</h2>
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="img/mandala.jpg" alt="Mandala">
-        <h3>Mandala</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="img/biancoenero.jpg" alt="Bianco e Nero">
-        <h3>Bianco e Nero</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="img/watercolor.jpg" alt="Watercolor">
-        <h3>Watercolor</h3>
-      </div>
+      <img src="img/mandala.jpg" alt="Mandala">
+      <img src="img/biancoenero.jpg" alt="Bianco e Nero">
+      <img src="img/watercolor.jpg" alt="Watercolor">
     </div>
   </section>
 
-  <section>
+  <section id="contatti">
     <h2>Contattami</h2>
-    <div class="contact">
-      <p>📍 Modena, Italia</p>
-      <p>📧 <a href="mailto:luketa2@email.com" style="color: #d4af37;">luketa2@email.com</a></p>
-      <p>📷 <a href="https://www.instagram.com/luketa2" target="_blank" style="color: #d4af37;">@luketa2</a></p>
-    </div>
+    <form>
+      <input type="text" placeholder="Nome">
+      <input type="email" placeholder="Email">
+      <textarea rows="4" placeholder="Messaggio"></textarea>
+      <button type="submit">Invia</button>
+    </form>
   </section>
 
   <footer>
-    &copy; 2025 LukeTA2 • Tutti i diritti riservati
+    &copy; 2025 LukeTA2 • <a href="https://instagram.com/luketa2" target="_blank">Instagram</a>
   </footer>
-
 </body>
+
 </html>
