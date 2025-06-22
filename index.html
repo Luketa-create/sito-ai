@@ -2,161 +2,167 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LukeTA2 – Tatuaggi Geometrici & Watercolor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LukeTA2 - Tattoo Artist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: #000;
       color: white;
     }
 
-    header.hero {
-      background-image: url("img/hero.jpg");
-      background-size: cover;
-      background-position: center;
-      padding: 150px 20px;
-      text-align: right;
+    header {
+      position: relative;
+      height: 100vh;
+      background: url('img/hero.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 5vw;
       color: white;
-      position: relative;
     }
 
-    header.hero::before {
-      content: "";
+    .logo {
       position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.3);
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
     }
 
-    .hero-content {
-      position: relative;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: 30px;
+    .menu {
+      position: absolute;
+      top: 30px;
+      right: 30px;
     }
 
-    .hero-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3em;
-      font-weight: 700;
-      margin: 0;
+    .menu a {
+      margin-left: 20px;
+      color: #d5984a;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
     }
 
-    .hero-content h1 span {
-      color: #cc8844;
+    .menu a:hover {
+      color: white;
     }
 
-    .hero-content p {
-      margin-top: 20px;
-      font-size: 1.2em;
+    .hero-text {
+      max-width: 600px;
+      margin-top: 200px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h1 span {
+      color: #d5984a;
+    }
+
+    .hero-text p {
+      font-size: 18px;
       line-height: 1.6;
     }
 
     section {
-      padding: 60px 20px;
-      text-align: center;
+      padding: 60px 5vw;
+      background-color: #000;
     }
 
     h2 {
-      color: #f4c04e;
-      font-size: 1.8em;
+      text-align: center;
+      color: #d5984a;
       margin-bottom: 20px;
     }
 
     .gallery {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 30px;
     }
 
-    .card {
-      background-color: #111;
-      border: 2px solid #f4c04e;
+    .gallery img {
+      border: 2px solid #d5984a;
       border-radius: 8px;
-      overflow: hidden;
-      width: 280px;
-      box-shadow: 0 0 10px #000;
-    }
-
-    .card img {
-      width: 100%;
+      max-width: 300px;
       height: auto;
-      display: block;
     }
 
-    .card p {
-      margin: 15px;
-      font-weight: bold;
-      color: #f4c04e;
+    .social {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    footer {
-      background-color: #111;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+    .social a img {
+      width: 30px;
+      height: auto;
+      filter: none;
+      transition: filter 0.3s ease;
     }
 
-    footer a {
-      color: #f4c04e;
-      text-decoration: none;
-      display: block;
-      margin: 5px 0;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+    .social a img:hover {
+      filter: brightness(0) invert(1);
     }
   </style>
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Your <span>Imagination</span><br>Our Passion</h1>
-      <p>
-        Specializing in classic, bold, and bright tattoos that last a lifetime.<br>
-        Tattoos are a mark of the soul.
-      </p>
+  <header>
+    <div class="logo">LUKE<span style="color:white">TA2</span></div>
+    <div class="menu">
+      <a href="#home">HOME</a>
+      <a href="#tattoo">TATTOO</a>
+      <a href="#chi-sono">CHI SONO</a>
+      <a href="#contatti">CONTATTI</a>
+      <a href="#blog">BLOG</a>
+    </div>
+    <div class="social">
+      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+    <div class="hero-text">
+      <h1>PER TE IL MIGLIOR <span>DESIGN</span> DEL TATUAGGIO</h1>
+      <p>LE TUE IDEE MERITANO ISPIRAZIONE, TECNICA E CUORE.</p>
     </div>
   </header>
 
-  <!-- Chi Sono -->
-  <section id="chisono">
+  <section id="chi-sono">
     <h2>Chi sono</h2>
-    <p>Ciao, sono Luca Cirillo, in arte <strong>LukeTA2</strong>. Realizzo tatuaggi ispirati alla geometria sacra, mandala, tecniche watercolor e bianco e nero. Ogni disegno è unico, pensato per armonizzarsi con il corpo e la personalità di chi lo indossa.</p>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+      Ciao, sono Luca Cirillo, in arte <strong>LukeTA2</strong>. Realizzo tatuaggi ispirati alla geometria sacra,
+      mandala, tecniche watercolor e bianco e nero. Ogni disegno è unico, pensato per armonizzarsi con il corpo
+      e la personalità di chi lo indossa. Spazio dai tatuaggi piccoli e fine line ai giapponesi, geometrici, blackout,
+      figurativi e stile Anime/Manga/Nerd.
+    </p>
   </section>
 
-  <!-- Galleria -->
-  <section id="galleria">
+  <section id="tattoo">
     <h2>Galleria</h2>
     <div class="gallery">
-      <div class="card">
-        <img src="img/mandala.jpg" alt="Mandala" />
-        <p>Mandala</p>
-      </div>
-      <div class="card">
-        <img src="img/biancoenero.jpg" alt="Bianco e Nero" />
-        <p>Bianco e Nero</p>
-      </div>
-      <div class="card">
-        <img src="img/watercolor.jpg" alt="Watercolor" />
-        <p>Watercolor</p>
-      </div>
+      <img src="img/mandala.jpg" alt="Mandala">
+      <img src="img/biancoenero.jpg" alt="Bianco e Nero">
+      <img src="img/watercolor.jpg" alt="Watercolor">
     </div>
   </section>
 
-  <!-- Contatti -->
-  <footer>
+  <section id="contatti">
     <h2>Contattami</h2>
-    <p>📍 Modena, Italia</p>
-    <a href="mailto:luketa2@email.com">luketa2@email.com</a>
-    <a href="https://www.instagram.com/luketa2" target="_blank">@luketa2</a>
-  </footer>
-
+    <p style="text-align: center;">Modena, Italia · <a href="mailto:luketa2@email.com" style="color:#d5984a;">luketa2@email.com</a></p>
+  </section>
 </body>
 </html>
