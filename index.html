@@ -50,8 +50,8 @@
     nav a {
       color: #d29952;
       text-decoration: none;
-      margin: 0 35px;
-      font-size: 32px; /* Più grande */
+      margin: 0 60px; /* Maggiore distanza tra le voci */
+      font-size: 32px;
       font-weight: bold;
       letter-spacing: 2px;
       transition: color 0.3s;
@@ -63,11 +63,28 @@
       color: white;
     }
 
+    .hamburger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      color: #d29952;
+      font-size: 36px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
     .hero {
       height: 100vh;
       display: flex;
       background: url('img/hero.jpg') center/cover no-repeat;
       position: relative;
+      overflow: hidden;
+    }
+
+    .hero-slider {
+      display: none;
     }
 
     .hero::after {
@@ -116,7 +133,7 @@
 
     .social {
       position: absolute;
-      left: 72px; /* Distanza dal bordo uguale alla larghezza dei loghi */
+      left: 72px;
       top: 65%;
       transform: translateY(-50%);
       display: flex;
@@ -142,25 +159,76 @@
 
     @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        padding: 10px 20px;
-      }
-
-      nav {
-        margin-top: 10px;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-      }
-
-      nav a {
-        font-size: 22px;
-        margin: 10px 0;
+        justify-content: space-between;
+        height: 80px;
+        padding: 10px 16px;
       }
 
       .logo {
-        height: 80px;
+        height: 60px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100vw;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        align-items: center;
+        z-index: 1000;
+        padding-bottom: 30px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        font-size: 26px;
+        margin: 18px 0;
+      }
+
+      .hero {
+        background: none;
+        height: 100vh;
+        min-height: 600px;
+        display: block;
+        position: relative;
+      }
+
+      .hero-slider {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .hero-slider img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.7s;
+      }
+
+      .hero-slider img.active {
+        opacity: 1;
+        z-index: 1;
       }
 
       .hero-text {
@@ -168,26 +236,32 @@
         text-align: center;
         justify-content: flex-end;
         margin-bottom: 20px;
+        margin-top: 40px;
+        position: relative;
+        z-index: 2;
       }
 
       .hero-text h1 {
-        font-size: 38px;
+        font-size: 28px;
       }
 
       .hero-text p {
-        font-size: 20px;
+        font-size: 16px;
         white-space: normal;
       }
 
       .social {
-        top: 70%;
-        left: 10px;
-        gap: 40px;
-        width: 80px;
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        gap: 24px;
+        margin: 24px 0 0 0;
+        width: 100%;
+        transform: none;
       }
 
       .social img {
-        width: 48px;
+        width: 40px;
       }
     }
   </style>
@@ -195,6 +269,7 @@
 <body>
   <header>
     <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo" />
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
     <nav>
       <a href="#home">HOME</a>
       <a href="#tattoo">TATTOO</a>
@@ -217,6 +292,12 @@
   </div>
 
   <section class="hero" id="home">
+    <!-- Slider mobile -->
+    <div class="hero-slider">
+      <img src="img/hero-mobile1.jpg" alt="Hero Mobile 1" class="active" />
+      <img src="img/hero-mobile2.jpg" alt="Hero Mobile 2" />
+      <img src="img/hero-mobile3.jpg" alt="Hero Mobile 3" />
+    </div>
     <div class="hero-text">
       <h1>
         PER TE IL MIGLIOR <span>DESIGN</span><br />DEL TATUAGGIO
@@ -224,5 +305,23 @@
       <p>LE TUE IDEE MERITANO ISPIRAZIONE, TECNICA E CUORE.</p>
     </div>
   </section>
+  <script>
+    // Mobile slider semplice
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      const slides = document.querySelectorAll('.hero-slider img');
+      let current = 0;
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 3500);
+    }
+    // Chiudi menu mobile al click su link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('nav').classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
