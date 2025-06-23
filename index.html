@@ -36,14 +36,14 @@
     }
 
     .logo {
-      height: 80px;
+      height: 90px;
     }
 
     nav a {
       color: #d29952;
       text-decoration: none;
       margin-left: 30px;
-      font-size: 18px;
+      font-size: 22px;
       transition: color 0.3s;
     }
 
@@ -71,17 +71,21 @@
 
     .hero-text {
       position: absolute;
-      bottom: 40px;
-      right: 40px;
       z-index: 2;
-      text-align: right;
+      bottom: 80px;
+      width: 100%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       color: white;
     }
 
     .hero-text h1 {
-      font-size: 64px;
+      font-size: 48px;
       font-weight: bold;
-      line-height: 1.1;
     }
 
     .hero-text span {
@@ -89,14 +93,14 @@
     }
 
     .hero-text p {
+      margin-top: 20px;
       font-size: 24px;
-      margin-top: 15px;
-      white-space: nowrap;
+      max-width: 900px;
     }
 
     .social {
       position: absolute;
-      top: 160px;
+      top: 140px;
       left: 40px;
       display: flex;
       flex-direction: column;
@@ -105,7 +109,7 @@
     }
 
     .social img {
-      width: 60px;
+      width: 48px;
       height: auto;
       transition: filter 0.3s ease;
       filter: brightness(0.8);
@@ -128,12 +132,11 @@
       .hero-text {
         align-items: center;
         text-align: center;
-        right: 20px;
-        left: 20px;
+        bottom: 40px;
       }
 
       .hero-text h1 {
-        font-size: 36px;
+        font-size: 32px;
       }
 
       .hero-text p {
@@ -141,13 +144,13 @@
       }
 
       .social {
-        top: 120px;
+        top: 100px;
         left: 20px;
         gap: 20px;
       }
 
       .social img {
-        width: 40px;
+        width: 36px;
       }
 
       .logo {
@@ -182,8 +185,8 @@
 
   <section class="hero" id="home">
     <div class="hero-text">
-      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br>DEL TATUAGGIO</h1>
       <p>LE TUE IDEE MERITANO ISPIRAZIONE, TECNICA E CUORE.</p>
+      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br>DEL TATUAGGIO</h1>
     </div>
   </section>
 </body>
