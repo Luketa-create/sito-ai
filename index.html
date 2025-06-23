@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LukeTA2 - Tattoo Artist</title>
   <style>
     @font-face {
@@ -27,23 +27,27 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 20px 40px;
+      padding: 30px 60px 0 60px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 10;
+      align-items: flex-start;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 2;
     }
 
     .logo {
-      height: 100px;
+      height: 110px;
+    }
+
+    nav {
+      margin-top: 25px;
     }
 
     nav a {
       color: #d29952;
       text-decoration: none;
-      margin-left: 30px;
-      font-size: 20px;
+      margin-left: 50px;
+      font-size: 22px;
       transition: color 0.3s;
     }
 
@@ -73,13 +77,13 @@
       position: relative;
       z-index: 2;
       width: 100%;
-      height: 100%;
-      padding: 40px;
+      padding: 60px;
+      margin-top: 180px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-end;
-      text-align: right;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
       color: white;
     }
 
@@ -94,22 +98,22 @@
 
     .hero-text p {
       margin-top: 20px;
-      font-size: 24px;
-      max-width: 600px;
+      font-size: 26px;
+      max-width: 700px;
     }
 
     .social {
       position: absolute;
-      top: 160px;
+      top: 180px;
       left: 40px;
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 30px;
       z-index: 999;
     }
 
     .social img {
-      width: 52px;
+      width: 56px;
       height: auto;
       transition: filter 0.3s ease;
       filter: brightness(0.8);
@@ -132,15 +136,14 @@
       .hero-text {
         align-items: center;
         text-align: center;
-        justify-content: center;
       }
 
       .hero-text h1 {
-        font-size: 38px;
+        font-size: 40px;
       }
 
       .hero-text p {
-        font-size: 16px;
+        font-size: 18px;
       }
 
       .social {
@@ -150,7 +153,7 @@
       }
 
       .social img {
-        width: 42px;
+        width: 40px;
       }
 
       .logo {
@@ -161,7 +164,7 @@
 </head>
 <body>
   <header>
-    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo" />
+    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo">
     <nav>
       <a href="#home">HOME</a>
       <a href="#tattoo">TATTOO</a>
@@ -185,7 +188,7 @@
 
   <section class="hero" id="home">
     <div class="hero-text">
-      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br />DEL TATUAGGIO</h1>
+      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br>DEL TATUAGGIO</h1>
       <p>LE TUE IDEE MERITANO ISPIRAZIONE, TECNICA E CUORE.</p>
     </div>
   </section>
