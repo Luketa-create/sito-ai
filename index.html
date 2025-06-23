@@ -77,11 +77,11 @@
       padding: 40px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end; /* In basso */
+      justify-content: flex-end;
       align-items: flex-end;
       text-align: right;
       color: white;
-      margin-bottom: 40px; /* Sposta ancora più in basso */
+      margin-bottom: 40px;
       margin-top: 0;
     }
 
@@ -104,19 +104,25 @@
 
     .social {
       position: absolute;
-      top: 160px;
-      left: 40px;
+      left: 0;
+      top: 60%;
+      transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      align-items: center;
+      gap: 60px; /* Maggiore distanza tra i loghi */
       z-index: 999;
+      width: 120px;
+      /* Centra i loghi rispetto al lato sinistro */
+      justify-content: center;
     }
 
     .social img {
-      width: 52px;
+      width: 104px; /* Raddoppiato rispetto a 52px */
       height: auto;
       transition: filter 0.3s ease;
       filter: brightness(0.8);
+      display: block;
     }
 
     .social img:hover {
@@ -150,13 +156,14 @@
       }
 
       .social {
-        top: 120px;
-        left: 20px;
-        gap: 20px;
+        top: 70%;
+        left: 0;
+        gap: 30px;
+        width: 80px;
       }
 
       .social img {
-        width: 42px;
+        width: 64px;
       }
 
       .logo {
