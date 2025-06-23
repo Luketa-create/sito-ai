@@ -33,18 +33,30 @@
       align-items: center;
       background-color: rgba(0, 0, 0, 0.6);
       z-index: 10;
+      height: 100px;
     }
 
     .logo {
       height: 100px;
     }
 
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     nav a {
       color: #d29952;
       text-decoration: none;
-      margin-left: 30px;
-      font-size: 20px;
+      margin: 0 35px;
+      font-size: 32px; /* Più grande */
+      font-weight: bold;
+      letter-spacing: 2px;
       transition: color 0.3s;
+      display: inline-block;
+      text-align: center;
     }
 
     nav a:hover {
@@ -104,21 +116,20 @@
 
     .social {
       position: absolute;
-      left: 0;
-      top: 60%;
+      left: 100px; /* Spostati più a destra rispetto a 40px */
+      top: 65%;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 60px; /* Maggiore distanza tra i loghi */
+      gap: 80px;
       z-index: 999;
       width: 120px;
-      /* Centra i loghi rispetto al lato sinistro */
       justify-content: center;
     }
 
     .social img {
-      width: 104px; /* Raddoppiato rispetto a 52px */
+      width: 72px;
       height: auto;
       transition: filter 0.3s ease;
       filter: brightness(0.8);
@@ -133,10 +144,23 @@
       header {
         flex-direction: column;
         align-items: flex-start;
+        height: auto;
+        padding: 10px 20px;
       }
 
       nav {
         margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        font-size: 22px;
+        margin: 10px 0;
+      }
+
+      .logo {
+        height: 80px;
       }
 
       .hero-text {
@@ -157,17 +181,13 @@
 
       .social {
         top: 70%;
-        left: 0;
-        gap: 30px;
+        left: 10px;
+        gap: 40px;
         width: 80px;
       }
 
       .social img {
-        width: 64px;
-      }
-
-      .logo {
-        height: 80px;
+        width: 48px;
       }
     }
   </style>
