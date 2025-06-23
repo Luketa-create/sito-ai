@@ -10,11 +10,7 @@
       src: url('img/LEMONMILK-Regular.otf') format('opentype');
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'LemonMilk', sans-serif;
@@ -38,6 +34,7 @@
 
     .logo {
       height: 100px;
+      display: block;
     }
 
     nav {
@@ -50,7 +47,7 @@
     nav a {
       color: #d29952;
       text-decoration: none;
-      margin: 0 60px; /* Maggiore distanza tra le voci */
+      margin: 0 60px;
       font-size: 32px;
       font-weight: bold;
       letter-spacing: 2px;
@@ -59,9 +56,7 @@
       text-align: center;
     }
 
-    nav a:hover {
-      color: white;
-    }
+    nav a:hover { color: white; }
 
     .hamburger {
       display: none;
@@ -120,9 +115,7 @@
       margin-bottom: 10px;
     }
 
-    .hero-text span {
-      color: #d29952;
-    }
+    .hero-text span { color: #d29952; }
 
     .hero-text p {
       margin-top: 10px;
@@ -131,7 +124,7 @@
       white-space: nowrap;
     }
 
-    .social {
+    .social-desktop {
       position: absolute;
       left: 72px;
       top: 65%;
@@ -145,7 +138,7 @@
       justify-content: center;
     }
 
-    .social img {
+    .social-desktop img {
       width: 72px;
       height: auto;
       transition: filter 0.3s ease;
@@ -153,31 +146,37 @@
       display: block;
     }
 
-    .social img:hover {
-      filter: brightness(1.2) invert(1);
-    }
+    .social-desktop img:hover { filter: brightness(1.2) invert(1); }
 
+    /* --- MOBILE --- */
     @media (max-width: 768px) {
+      body {
+        background: #000;
+      }
       header {
-        flex-direction: row;
+        position: static;
+        background: transparent;
+        height: auto;
+        padding: 0;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        height: 80px;
-        padding: 10px 16px;
+        justify-content: flex-start;
       }
-
       .logo {
-        height: 60px;
-      }
-
-      .hamburger {
+        height: 70px;
+        margin: 24px auto 0 auto;
         display: block;
       }
-
+      .hamburger {
+        display: block;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+      }
       nav {
         display: none;
         position: absolute;
-        top: 80px;
+        top: 70px;
         left: 0;
         width: 100vw;
         background: rgba(0,0,0,0.95);
@@ -186,24 +185,32 @@
         z-index: 1000;
         padding-bottom: 30px;
       }
-
-      nav.active {
-        display: flex;
-      }
-
+      nav.active { display: flex; }
       nav a {
         font-size: 26px;
         margin: 18px 0;
       }
-
+      .social-desktop { display: none; }
+      .social-mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        margin: 18px 0 0 0;
+        width: 100%;
+      }
+      .social-mobile img {
+        width: 40px;
+      }
       .hero {
         background: none;
         height: 100vh;
         min-height: 600px;
         display: block;
         position: relative;
+        overflow: hidden;
       }
-
       .hero-slider {
         display: block;
         position: absolute;
@@ -214,7 +221,6 @@
         z-index: 0;
         overflow: hidden;
       }
-
       .hero-slider img {
         width: 100vw;
         height: 100vh;
@@ -225,12 +231,10 @@
         opacity: 0;
         transition: opacity 0.7s;
       }
-
       .hero-slider img.active {
         opacity: 1;
         z-index: 1;
       }
-
       .hero-text {
         align-items: center;
         text-align: center;
@@ -240,28 +244,12 @@
         position: relative;
         z-index: 2;
       }
-
       .hero-text h1 {
         font-size: 28px;
       }
-
       .hero-text p {
         font-size: 16px;
         white-space: normal;
-      }
-
-      .social {
-        position: static;
-        flex-direction: row;
-        justify-content: center;
-        gap: 24px;
-        margin: 24px 0 0 0;
-        width: 100%;
-        transform: none;
-      }
-
-      .social img {
-        width: 40px;
       }
     }
   </style>
@@ -277,9 +265,21 @@
       <a href="#contatti">CONTATTI</a>
       <a href="#blog">BLOG</a>
     </nav>
+    <div class="social-desktop">
+      <a href="https://www.facebook.com/luketa2/" target="_blank">
+        <img src="img/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/luketa2" target="_blank">
+        <img src="img/instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://wa.me/393482463458" target="_blank">
+        <img src="img/whatsapp.png" alt="WhatsApp" />
+      </a>
+    </div>
   </header>
 
-  <div class="social">
+  <!-- Social mobile sotto il logo -->
+  <div class="social-mobile" style="display:none;">
     <a href="https://www.facebook.com/luketa2/" target="_blank">
       <img src="img/facebook.png" alt="Facebook" />
     </a>
@@ -306,8 +306,19 @@
     </div>
   </section>
   <script>
+    // Mostra social-mobile solo su mobile
+    function toggleSocial() {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.social-mobile').style.display = 'flex';
+      } else {
+        document.querySelector('.social-mobile').style.display = 'none';
+      }
+    }
+    toggleSocial();
+    window.addEventListener('resize', toggleSocial);
+
     // Mobile slider semplice
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    function mobileSlider() {
       const slides = document.querySelectorAll('.hero-slider img');
       let current = 0;
       setInterval(() => {
@@ -315,6 +326,9 @@
         current = (current + 1) % slides.length;
         slides[current].classList.add('active');
       }, 3500);
+    }
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      mobileSlider();
     }
     // Chiudi menu mobile al click su link
     document.querySelectorAll('nav a').forEach(link => {
