@@ -3,101 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUKE TA2</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>LukeTA2 - Tattoo Artist</title>
   <style>
-    body {
+    @font-face {
+      font-family: 'LemonMilk';
+      src: url('img/LEMONMILK-Regular.otf') format('opentype');
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'LEMON MILK', sans-serif;
+      box-sizing: border-box;
     }
 
-    .hero {
-      background-image: url('img/hero.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
+    body {
+      font-family: 'LemonMilk', sans-serif;
+      background-color: #000;
       color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 40px;
     }
 
-    .hero-text {
-      text-align: right;
-      margin-bottom: 120px;
-    }
-
-    .hero-text h1 {
-      font-size: 48px;
-      margin: 0;
-    }
-
-    .hero-text p {
-      font-size: 22px;
-      margin-top: 12px;
-    }
-
-    .navbar {
+    header {
       position: absolute;
       top: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      left: 0;
+      width: 100%;
       padding: 20px 40px;
       display: flex;
-      gap: 30px;
-      font-size: 16px;
-    }
-
-    .navbar a {
-      color: #d28c3c;
-      text-decoration: none;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 10;
     }
 
     .logo {
+      height: 100px;
+    }
+
+    nav a {
+      color: #d29952;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      background: url('img/hero.jpg') center/cover no-repeat;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
       position: absolute;
-      top: 20px;
-      left: 20px;
-      height: 60px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: right;
+      color: white;
+    }
+
+    .hero-text h1 {
+      font-size: 64px;
+      font-weight: bold;
+    }
+
+    .hero-text span {
+      color: #d29952;
+    }
+
+    .hero-text p {
+      margin-top: 20px;
+      font-size: 24px;
+      max-width: 600px;
     }
 
     .social {
       position: absolute;
-      top: 120px;
-      left: 20px;
+      top: 160px;
+      left: 40px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 25px;
+      z-index: 999;
     }
 
     .social img {
-      width: 40px;
-      height: 40px;
+      width: 52px;
+      height: auto;
+      transition: filter 0.3s ease;
+      filter: brightness(0.8);
+    }
+
+    .social img:hover {
+      filter: brightness(1.2) invert(1);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .hero-text {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-text h1 {
+        font-size: 38px;
+      }
+
+      .hero-text p {
+        font-size: 16px;
+      }
+
+      .social {
+        top: 120px;
+        left: 20px;
+        gap: 20px;
+      }
+
+      .social img {
+        width: 42px;
+      }
+
+      .logo {
+        height: 80px;
+      }
     }
   </style>
 </head>
 <body>
-  <img src="img/luketa2-logo.png" alt="Logo" class="logo" />
-
-  <div class="navbar">
-    <a href="#">HOME</a>
-    <a href="#">TATTOO</a>
-    <a href="#">CHI SONO</a>
-    <a href="#">CONTATTI</a>
-    <a href="#">BLOG</a>
-  </div>
+  <header>
+    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo" />
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#tattoo">TATTOO</a>
+      <a href="#chisono">CHI SONO</a>
+      <a href="#contatti">CONTATTI</a>
+      <a href="#blog">BLOG</a>
+    </nav>
+  </header>
 
   <div class="social">
-    <a href="https://www.facebook.com"><img src="img/facebook.png" alt="Facebook"></a>
-    <a href="https://www.instagram.com"><img src="img/instagram.png" alt="Instagram"></a>
-    <a href="https://wa.me"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+    <a href="https://www.facebook.com/luketa2/" target="_blank">
+      <img src="img/facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://www.instagram.com/luketa2" target="_blank">
+      <img src="img/instagram.png" alt="Instagram" />
+    </a>
+    <a href="https://wa.me/393482463458" target="_blank">
+      <img src="img/whatsapp.png" alt="WhatsApp" />
+    </a>
   </div>
 
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-text">
+      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br />DEL TATUAGGIO</h1>
       <p>LE TUE IDEE MERITANO ISPIRAZIONE, TECNICA E CUORE.</p>
-      <h1>PER TE IL MIGLIOR <span style="color: #d28c3c;">DESIGN</span><br>DEL TATUAGGIO</h1>
     </div>
   </section>
 </body>
