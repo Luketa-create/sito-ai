@@ -36,7 +36,8 @@
     }
 
     .logo {
-      height: 100px;
+      height: 160px; /* Logo più grande */
+      transition: height 0.3s;
     }
 
     nav a {
@@ -104,20 +105,20 @@
 
     .social {
       position: absolute;
-      left: 40px; /* Più distante dal bordo sinistro */
+      left: 40px;
       top: 65%;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 80px; /* Maggiore distanza tra i loghi */
+      gap: 80px;
       z-index: 999;
       width: 120px;
       justify-content: center;
     }
 
     .social img {
-      width: 72px; /* Più piccolo rispetto a prima */
+      width: 72px;
       height: auto;
       transition: filter 0.3s ease;
       filter: brightness(0.8);
@@ -136,6 +137,10 @@
 
       nav {
         margin-top: 10px;
+      }
+
+      .logo {
+        height: 100px; /* Logo più grande anche su mobile */
       }
 
       .hero-text {
@@ -163,10 +168,6 @@
 
       .social img {
         width: 48px;
-      }
-
-      .logo {
-        height: 80px;
       }
     }
   </style>
