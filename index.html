@@ -4,104 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LukeTA2 - Tattoo Artist</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     @font-face {
       font-family: 'LemonMilk';
       src: url('img/LEMONMILK-Regular.otf') format('opentype');
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #111; color: #fff; }
 
-    body {
-      font-family: 'LemonMilk', sans-serif;
-      background-color: #000;
-      color: white;
-    }
-
-    header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 10;
-      height: 100px;
-    }
-
-    .logo {
-      height: 100px;
-      display: block;
-    }
-
-    nav {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    nav a {
-      color: #d29952;
-      text-decoration: none;
-      margin: 0 60px;
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      transition: color 0.3s;
-      display: inline-block;
-      text-align: center;
-    }
-
-    nav a:hover { color: white; }
-
-    .hamburger {
-      display: none;
-      width: 40px;
-      height: 40px;
-      background: none;
-      border: none;
-      color: #d29952;
-      font-size: 36px;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    .hero {
+    .section-hero {
       height: 100vh;
-      display: flex;
       background: url('img/hero.jpg') center/cover no-repeat;
       position: relative;
-      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
     }
 
-    .hero-slider {
-      display: none;
-    }
-
-    .hero::after {
-      content: "";
+    .section-header {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
-      z-index: 1;
+      height: 100px;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .section-header .logo {
+      position: absolute;
+      left: 40px;
+      height: 80px;
+    }
+
+    .section-title {
+      color: #fff;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-align: center;
+      width: 100%;
+      font-family: 'LemonMilk', sans-serif;
     }
 
     .hero-text {
       position: relative;
       z-index: 2;
       width: 100%;
-      height: 100%;
       padding: 40px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
       align-items: flex-end;
       text-align: right;
       color: white;
@@ -124,218 +79,25 @@
       white-space: nowrap;
     }
 
-    .social-desktop {
-      position: absolute;
-      left: 72px;
-      top: 65%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 80px;
-      z-index: 999;
-      width: 120px;
-      justify-content: center;
-    }
-
-    .social-desktop img {
-      width: 72px;
-      height: auto;
-      transition: filter 0.3s ease;
-      filter: brightness(0.8);
-      display: block;
-    }
-
-    .social-desktop img:hover { filter: brightness(1.2) invert(1); }
-
-    /* --- MOBILE --- */
     @media (max-width: 768px) {
-      body {
-        background: #000;
-      }
-      header {
-        position: static;
-        background: transparent;
-        height: auto;
-        padding: 0;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-      }
-      .logo {
-        height: 70px;
-        margin: 24px auto 0 auto;
-        display: block;
-      }
-      .hamburger {
-        display: block;
-        position: absolute;
-        top: 24px;
-        right: 24px;
-      }
-      nav {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100vw;
-        background: rgba(0,0,0,0.95);
-        flex-direction: column;
-        align-items: center;
-        z-index: 1000;
-        padding-bottom: 30px;
-      }
-      nav.active { display: flex; }
-      nav a {
-        font-size: 26px;
-        margin: 18px 0;
-      }
-      .social-desktop { display: none; }
-      .social-mobile {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 32px;
-        margin: 18px 0 0 0;
-        width: 100%;
-      }
-      .social-mobile img {
-        width: 40px;
-      }
-      .hero {
-        background: none;
-        height: 100vh;
-        min-height: 600px;
-        display: block;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero-slider {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
-        overflow: hidden;
-      }
-      .hero-slider img {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 0.7s;
-      }
-      .hero-slider img.active {
-        opacity: 1;
-        z-index: 1;
-      }
-      .hero-text {
-        align-items: center;
-        text-align: center;
-        justify-content: flex-start;
-        margin-bottom: 20px;
-        margin-top: 40px;
-        position: relative;
-        z-index: 2;
-      }
-      .hero-text h1 {
-        font-size: 28px;
-      }
-      .hero-text p {
-        font-size: 16px;
-        white-space: normal;
-      }
+      .section-hero { height: 100vh; min-height: 600px; }
+      .section-header .logo { left: 16px; height: 50px; }
+      .section-title { font-size: 1.3rem; }
+      .hero-text h1 { font-size: 28px; }
+      .hero-text p { font-size: 16px; white-space: normal; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo" />
-    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
-    <nav>
-      <a href="index.html">HOME</a>
-      <a href="tattoo.html">TATTOO</a>
-      <a href="chisono.html">CHI SONO</a>
-      <a href="contatti.html">CONTATTI</a>
-      <a href="blog.html">BLOG</a>
-    </nav>
-  </header>
-
-  <div class="social-desktop">
-    <a href="https://www.facebook.com/luketa2/" target="_blank">
-      <img src="img/facebook.png" alt="Facebook" />
-    </a>
-    <a href="https://www.instagram.com/luketa2" target="_blank">
-      <img src="img/instagram.png" alt="Instagram" />
-    </a>
-    <a href="https://wa.me/393482463458" target="_blank">
-      <img src="img/whatsapp.png" alt="WhatsApp" />
-    </a>
-  </div>
-
-  <!-- Social mobile sotto il logo -->
-  <div class="social-mobile" style="display:none;">
-    <a href="https://www.facebook.com/luketa2/" target="_blank">
-      <img src="img/facebook.png" alt="Facebook" />
-    </a>
-    <a href="https://www.instagram.com/luketa2" target="_blank">
-      <img src="img/instagram.png" alt="Instagram" />
-    </a>
-    <a href="https://wa.me/393482463458" target="_blank">
-      <img src="img/whatsapp.png" alt="WhatsApp" />
-    </a>
-  </div>
-
-  <section class="hero" id="home">
-    <!-- Slider mobile -->
-    <div class="hero-slider">
-      <img src="img/hero-mobile1.jpg" alt="Hero Mobile 1" class="active" />
-      <img src="img/hero-mobile2.jpg" alt="Hero Mobile 2" />
-      <img src="img/hero-mobile3.jpg" alt="Hero Mobile 3" />
+  <div class="section-hero">
+    <div class="section-header">
+      <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo" />
+      <span class="section-title">HOME</span>
     </div>
     <div class="hero-text">
-      <h1>
-        PER TE IL MIGLIOR <span>DESIGN</span><br />DEL TATUAGGIO
-      </h1>
+      <h1>PER TE IL MIGLIOR <span>DESIGN</span><br />DEL TATUAGGIO</h1>
       <p>LE TUE IDEE MERITANO ISPIRAZIONE, TECNICA E CUORE.</p>
     </div>
-  </section>
-  <script>
-    // Mostra social-mobile solo su mobile
-    function toggleSocial() {
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        document.querySelector('.social-mobile').style.display = 'flex';
-      } else {
-        document.querySelector('.social-mobile').style.display = 'none';
-      }
-    }
-    toggleSocial();
-    window.addEventListener('resize', toggleSocial);
-
-    // Mobile slider semplice
-    function mobileSlider() {
-      const slides = document.querySelectorAll('.hero-slider img');
-      let current = 0;
-      setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-      }, 3500);
-    }
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      mobileSlider();
-    }
-    // Chiudi menu mobile al click su link
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.querySelector('nav').classList.remove('active');
-      });
-    });
-  </script>
+  </div>
 </body>
+</html>

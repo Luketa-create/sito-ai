@@ -5,33 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog - LukeTA2</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background: #111; color: #fff; }
+    .section-hero {
+      height: 60vh;
+      background: url('img/mandala.jpg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .section-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .section-header .logo {
+      position: absolute;
+      left: 40px;
+      height: 80px;
+    }
+    .section-title {
+      color: #fff;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-align: center;
+      width: 100%;
+      font-family: 'LemonMilk', sans-serif;
+    }
+    .blog-container { max-width: 800px; margin: 40px auto 0 auto; padding: 32px; background: rgba(0,0,0,0.7); border-radius: 18px; box-shadow: 0 4px 24px #000a; }
+    .blog-title { text-align: center; font-size: 2.5rem; color: #d29952; margin-bottom: 24px; letter-spacing: 2px; }
+    .blog-list { list-style: none; padding: 0; }
+    .blog-list li { margin-bottom: 32px; }
+    .blog-list h2 { color: #d29952; font-size: 1.5rem; margin-bottom: 8px; }
+    .blog-list p { color: #ccc; font-size: 1.1rem; }
+  </style>
 </head>
 <body>
-  <!-- Header e menu -->
-  <header>
-    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo" />
-    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
-    <nav>
-      <a href="index.html">HOME</a>
-      <a href="tattoo.html">TATTOO</a>
-      <a href="chisono.html">CHI SONO</a>
-      <a href="contatti.html">CONTATTI</a>
-      <a href="blog.html">BLOG</a>
-    </nav>
-  </header>
-  <div class="social-desktop">
-    <a href="https://www.facebook.com/luketa2/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>
-    <a href="https://www.instagram.com/luketa2" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
-    <a href="https://wa.me/393482463458" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
-  </div>
-  <div class="social-mobile" style="display:none;">
-    <a href="https://www.facebook.com/luketa2/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>
-    <a href="https://www.instagram.com/luketa2" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
-    <a href="https://wa.me/393482463458" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+  <div class="section-hero">
+    <div class="section-header">
+      <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo" />
+      <span class="section-title">Blog</span>
+    </div>
   </div>
   <main>
-    <h1>Blog</h1>
-    <p>Qui puoi inserire articoli, novità e aggiornamenti dal tuo mondo tattoo.</p>
+    <div class="blog-container">
+      <h1 class="blog-title">Blog</h1>
+      <ul class="blog-list">
+        <li>
+          <h2>Benvenuto nel mio blog!</h2>
+          <p>Qui troverai novità, curiosità e consigli dal mondo del tatuaggio e della creatività.</p>
+        </li>
+        <li>
+          <h2>Come nasce un tatuaggio personalizzato</h2>
+          <p>Dal primo incontro all'idea, dal bozzetto alla realizzazione: il percorso per creare un tattoo unico.</p>
+        </li>
+      </ul>
+    </div>
   </main>
 </body>
 </html>
