@@ -9,7 +9,7 @@
     body { background: #111; color: #fff; }
     .section-hero {
       height: 60vh;
-      background: url('img/mandala.jpg') center/cover no-repeat;
+      background: url('img/hero.jpg') center/cover no-repeat;
       position: relative;
       display: flex;
       align-items: flex-end;
@@ -40,14 +40,12 @@
       width: 100%;
       font-family: 'LemonMilk', sans-serif;
     }
-    .contatti-container { max-width: 500px; margin: 40px auto 0 auto; padding: 32px; background: rgba(0,0,0,0.7); border-radius: 18px; box-shadow: 0 4px 24px #000a; }
-    .contatti-title { text-align: center; font-size: 2.5rem; color: #d29952; margin-bottom: 24px; letter-spacing: 2px; }
-    .contatti-info { color: #ccc; font-size: 1.2rem; text-align: center; margin-bottom: 24px; }
-    .contatti-form { display: flex; flex-direction: column; gap: 16px; }
-    .contatti-form input, .contatti-form textarea { padding: 12px; border-radius: 8px; border: none; font-size: 1rem; }
-    .contatti-form button { background: #d29952; color: #fff; border: none; border-radius: 8px; padding: 12px; font-size: 1.1rem; cursor: pointer; transition: background 0.2s; }
-    .contatti-form button:hover { background: #b8862b; }
-    footer { background: #222; color: #ccc; text-align: center; padding: 24px 0 12px 0; margin-top: 60px; }
+    .contatti-container { max-width: 700px; margin: 40px auto 0 auto; padding: 32px; background: rgba(0,0,0,0.7); border-radius: 18px; box-shadow: 0 4px 24px #000a; text-align: center; }
+    .contatti-title { font-size: 2.2rem; color: #d29952; margin-bottom: 18px; letter-spacing: 2px; }
+    .contatti-info { color: #ccc; font-size: 1.2rem; margin-bottom: 18px; }
+    .contatti-form input, .contatti-form textarea { width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 6px; border: none; font-size: 1rem; }
+    .contatti-form button { background: #d29952; color: #111; border: none; padding: 10px 24px; border-radius: 6px; font-size: 1.1rem; cursor: pointer; }
+    .contatti-form button:hover { background: #fff; color: #d29952; }
   </style>
 </head>
 <body>
@@ -59,21 +57,18 @@
   </div>
   <main>
     <div class="contatti-container">
-      <h1 class="contatti-title">Contattami</h1>
+      <h1 class="contatti-title">Contatti</h1>
       <div class="contatti-info">
-        <p>Email: <a href="mailto:info@tuosito.it" style="color:#d29952;">info@tuosito.it</a></p>
-        <p>WhatsApp: <a href="https://wa.me/393482463458" style="color:#d29952;">+39 348 246 3458</a></p>
+        <p>Scrivimi su WhatsApp: <a href="https://wa.me/393482463458" style="color:#d29952;">393 482463458</a></p>
+        <p>Email: <a href="mailto:luketa2tattoo@gmail.com" style="color:#d29952;">luketa2tattoo@gmail.com</a></p>
       </div>
       <form class="contatti-form">
         <input type="text" placeholder="Nome" required />
         <input type="email" placeholder="Email" required />
-        <textarea placeholder="Messaggio" rows="5" required></textarea>
+        <textarea placeholder="Messaggio" rows="4" required></textarea>
         <button type="submit">Invia</button>
       </form>
     </div>
   </main>
-  <footer>
-    &copy; 2025 LukeTA2 - Tutti i diritti riservati
-  </footer>
 </body>
 </html>
