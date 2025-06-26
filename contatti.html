@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contatti - LukeTA2</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background: #111; color: #fff; }
+    .contatti-container { max-width: 500px; margin: 80px auto 0 auto; padding: 32px; background: rgba(0,0,0,0.7); border-radius: 18px; box-shadow: 0 4px 24px #000a; }
+    .contatti-title { text-align: center; font-size: 2.5rem; color: #d29952; margin-bottom: 24px; letter-spacing: 2px; }
+    .contatti-info { color: #ccc; font-size: 1.2rem; text-align: center; margin-bottom: 24px; }
+    .contatti-form { display: flex; flex-direction: column; gap: 16px; }
+    .contatti-form input, .contatti-form textarea { padding: 12px; border-radius: 8px; border: none; font-size: 1rem; }
+    .contatti-form button { background: #d29952; color: #fff; border: none; border-radius: 8px; padding: 12px; font-size: 1.1rem; cursor: pointer; transition: background 0.2s; }
+    .contatti-form button:hover { background: #b8862b; }
+    footer { background: #222; color: #ccc; text-align: center; padding: 24px 0 12px 0; margin-top: 60px; }
+  </style>
+</head>
+<body>
+  <!-- Header e menu -->
+  <header>
+    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo" />
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="tattoo.html">TATTOO</a>
+      <a href="chisono.html">CHI SONO</a>
+      <a href="contatti.html">CONTATTI</a>
+      <a href="blog.html">BLOG</a>
+    </nav>
+  </header>
+  <div class="social-desktop">
+    <a href="https://www.facebook.com/luketa2/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>
+    <a href="https://www.instagram.com/luketa2" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
+    <a href="https://wa.me/393482463458" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+  </div>
+  <div class="social-mobile" style="display:none;">
+    <a href="https://www.facebook.com/luketa2/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>
+    <a href="https://www.instagram.com/luketa2" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
+    <a href="https://wa.me/393482463458" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+  </div>
+  <main>
+    <div class="contatti-container">
+      <h1 class="contatti-title">Contattami</h1>
+      <div class="contatti-info">
+        <p>Email: <a href="mailto:info@tuosito.it" style="color:#d29952;">info@tuosito.it</a></p>
+        <p>WhatsApp: <a href="https://wa.me/393482463458" style="color:#d29952;">+39 348 246 3458</a></p>
+      </div>
+      <form class="contatti-form">
+        <input type="text" placeholder="Nome" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Messaggio" rows="5" required></textarea>
+        <button type="submit">Invia</button>
+      </form>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 LukeTA2 - Tutti i diritti riservati
+  </footer>
+</body>
+</html>

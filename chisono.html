@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi sono - LukeTA2</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background: #111; color: #fff; }
+    .bio-container { max-width: 700px; margin: 80px auto 0 auto; padding: 32px; background: rgba(0,0,0,0.7); border-radius: 18px; box-shadow: 0 4px 24px #000a; }
+    .bio-title { text-align: center; font-size: 2.5rem; color: #d29952; margin-bottom: 24px; letter-spacing: 2px; }
+    .bio-img { display: block; margin: 0 auto 24px auto; border-radius: 50%; width: 160px; height: 160px; object-fit: cover; box-shadow: 0 2px 12px #000a; }
+    .bio-text { font-size: 1.2rem; color: #ccc; text-align: center; }
+  </style>
+</head>
+<body>
+  <!-- Header e menu -->
+  <header>
+    <img src="img/luketa2-logo.png" alt="LukeTA2 Logo" class="logo" />
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="tattoo.html">TATTOO</a>
+      <a href="chisono.html">CHI SONO</a>
+      <a href="contatti.html">CONTATTI</a>
+      <a href="blog.html">BLOG</a>
+    </nav>
+  </header>
+  <div class="social-desktop">
+    <a href="https://www.facebook.com/luketa2/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>
+    <a href="https://www.instagram.com/luketa2" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
+    <a href="https://wa.me/393482463458" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+  </div>
+  <div class="social-mobile" style="display:none;">
+    <a href="https://www.facebook.com/luketa2/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>
+    <a href="https://www.instagram.com/luketa2" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
+    <a href="https://wa.me/393482463458" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+  </div>
+  <main>
+    <div class="bio-container">
+      <img src="img/luketa2-logo.png" alt="LukeTA2" class="bio-img" />
+      <h1 class="bio-title">Chi sono</h1>
+      <p class="bio-text">Sono Luca, in arte LukeTA2. Da anni trasformo idee e sogni in tatuaggi unici, mettendo sempre ispirazione, tecnica e cuore in ogni progetto. La mia missione è creare per te un tatuaggio che ti rappresenti davvero.</p>
+    </div>
+  </main>
+</body>
+</html>
